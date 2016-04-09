@@ -36,8 +36,8 @@ config :phoenix, :stacktrace_depth, 20
 # Configure your database
 config :ratedbeer, RatedBeer.Repo,
   adapter: Ecto.Adapters.Postgres,
-  username: "postgres",
-  password: "postgres",
-  database: "ratedbeer_dev",
-  hostname: "localhost",
+  username: Application.get_env(:ratedbeer, "PSQL_USERNAME", "postgres"),
+  password: Application.get_env(:ratedbeer, "PSQL_PASSWORD", "postgres"),
+  database: Application.get_env(:ratedbeer, "PSQL_DB", "ratedbeer_dev"),
+  hostname: Application.get_env(:ratedbeer, "PSQL_HOST", "localhost"),
   pool_size: 10
