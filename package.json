@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "compile": "webpack -p"
+    "compile": "webpack -p",
+    "postinstall": "webpack -p"
   },
   "repository": {},
   "dependencies": {},
