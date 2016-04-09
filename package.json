@@ -1,7 +1,7 @@
 {
   "scripts": {
     "compile": "webpack -p",
-    "postinstall": "webpack -p"
+    "postinstall": "./node_modules/.bin/webpack -p"
   },
   "repository": {},
   "dependencies": {},
