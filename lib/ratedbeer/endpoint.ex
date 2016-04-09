@@ -33,7 +33,7 @@ defmodule RatedBeer.Endpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_ratedbeer_key",
-    signing_salt: System.get_env("PHOENIX_SIGNING_SALT") || "CHANGEME"
+    signing_salt: System.get_env("SIGNING_SALT") || "CHANGEME"
 
   plug RatedBeer.Router
 end

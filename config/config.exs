@@ -7,9 +7,9 @@ use Mix.Config
 
 # Configures the endpoint
 config :ratedbeer, RatedBeer.Endpoint,
-  url: [host: "localhost"],
+  url: [host: System.get_env("HOSTNAME")],
   root: Path.dirname(__DIR__),
-  secret_key_base: System.get_env("PHOENIX_SECRET_KEY_BASE") || "CHANGEME",
+  secret_key_base: System.get_env("SECRET_KEY_BASE") || "CHANGEME",
   render_errors: [accepts: ~w(html json)],
   pubsub: [name: RatedBeer.PubSub,
            adapter: Phoenix.PubSub.PG2]
