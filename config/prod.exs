@@ -1,11 +1,11 @@
 use Mix.Config
 
 config :ratedbeer, RatedBeer.Endpoint,
+  http: [port: {:system, "PORT"}],
   https: [port: 443,
           keyfile: System.get_env("SSL_KEY_PATH"),
           certfile: System.get_env("SSL_CERT_PATH")],
-  cache_static_manifest: "priv/static/manifest.json",
-  force_ssl: [hsts: true]
+  cache_static_manifest: "priv/static/manifest.json"
 
 config :logger,
   url: [host: System.get_env("HOSTNAME"), port: 443], level: :info
