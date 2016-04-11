@@ -5,7 +5,7 @@ defmodule RatedBeer.UserSocket do
 
   transport :longpoll, Phoenix.Transports.LongPoll
   transport :websocket, Phoenix.Transports.WebSocket,
-    origins: ["//localhost", "http://ratedbeer.com", "https://ratedbeer.com", "//172.17.0.15:5000"]
+    check_origin: false
 
   def connect(_params, socket) do
     {:ok, socket}
