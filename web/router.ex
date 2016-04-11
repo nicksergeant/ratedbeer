@@ -14,13 +14,14 @@ defmodule RatedBeer.Router do
   end
 
   scope "/", RatedBeer do
-    pipe_through :browser # Use the default browser stack
+    pipe_through :browser
 
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", RatedBeer do
-  #   pipe_through :api
-  # end
+  scope "/api", RatedBeer do
+    pipe_through :api
+
+    get "/search", SearchController, :search
+  end
 end
