@@ -1,0 +1,29 @@
+body {
+  font-size: 14px;
+  margin: 0;
+  padding: 20px;
+  width: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+input {
+  font-size: 14px;
+  margin: 0;
+  padding: 10px;
+  width: 100%;
+}
+
+ul {
+  padding: 0;
+
+  li {
+    background: #EBEBEB;
+    list-style-type: none;
+    font-family: Arial;
+    margin: 5px 0;
+    padding: 7px 9px;
+  }
+}
