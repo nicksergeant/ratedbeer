@@ -10,7 +10,8 @@ defmodule RatedBeer.SearchChannel do
   end
 
   def handle_in("search:query", msg, socket) do
-    {:reply, {:ok, %{results: "results"}}, assign(socket, :user, msg["user"])}
+    results = BeerSearch.search(msg["query"])
+    {:reply, {:ok, %{results: results}}, assign(socket, :user, msg["user"])}
   end
 
   def terminate(reason, _socket) do
