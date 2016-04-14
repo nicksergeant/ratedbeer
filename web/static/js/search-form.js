@@ -31,14 +31,15 @@ class SearchForm extends Component {
 
   render() {
     return (
-      <div>
+      <header>
+        <a href="/"><img src="/images/logo.png" /></a>
         <input
           onInput={this.handleQueryChange.bind(this)}
           placeholder="Search..."
           type="text"
           value={this.state.query}
         />
-      </div>
+      </header>
     );
   }
 }
