@@ -35,14 +35,31 @@ ul {
   padding: 0;
 
   li {
-    background: #FFF;
-    box-shadow: 8px 8px #2A2725;
-    display: block;
-    float: left;
-    height: 315px;
     list-style-type: none;
-    margin: 1.5%;
-    padding: 7px 9px;
-    width: 30%;
+
+    a {
+      background: #FFF;
+      box-shadow: 8px 8px #2A2725;
+      color: #45403D;
+      display: block;
+      float: left;
+      font-family: Arial;
+      font-size: 24px;
+      height: 315px;
+      margin: 1.5%;
+      padding: 7px 9px;
+      text-decoration: none;
+      width: 30%;
+
+      @media (max-width: 900px) {
+        box-shadow: none;
+        width: 47%;
+      }
+
+      @media (max-width: 450px) {
+        box-shadow: none;
+        width: 97%;
+      }
+    }
   }
 }
