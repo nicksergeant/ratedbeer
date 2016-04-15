@@ -10,7 +10,8 @@ body {
 }
 
 header {
-  background: #FFD05A;
+  background: #FFD05A url('/images/header-bg.png') top left repeat;
+  background-size: 158px 157px;
   padding: 50px 0 50px 0;
   
   img {
@@ -34,10 +35,14 @@ ul {
   padding: 0;
 
   li {
-    background: #EBEBEB;
+    background: #FFF;
+    box-shadow: 8px 8px #2A2725;
+    display: block;
+    float: left;
+    height: 315px;
     list-style-type: none;
-    font-family: Arial;
-    margin: 5px 0;
+    margin: 1.5%;
     padding: 7px 9px;
+    width: 30%;
   }
 }
