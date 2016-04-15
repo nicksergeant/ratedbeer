@@ -30,7 +30,7 @@ defmodule RatedBeer.Mixfile do
   #
   # Type `mix help deps` for examples and options.
   defp deps do
-    [{:beersearch, "~> 0.0.4"},
+    [{:beersearch, "~> 0.0.6"},
      {:cowboy, "~> 1.0"},
      {:phoenix, "~> 1.0.3"},
      {:phoenix_ecto, "~> 1.1"},

@@ -19,7 +19,7 @@ class ResultsList extends Component {
 
   render() {
     const results = this.state.results.map((result) => {
-      return <li key={result}>{result}</li>;
+      return <li key={result}>{result.name}</li>;
     });
     return (
       <ul>
