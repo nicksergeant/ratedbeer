@@ -20,13 +20,22 @@ class ResultsList extends Component {
   render() {
     const results = this.state.results.map((result) => {
       return (
-        <li key={result}>
+        <li key={result.url}>
           <a href={result.url}>
-            {result.name}<br />
-            {result.brewery}<br />
-            {result.abv}, {result.ibu}<br />
-            Rated {result.rating}<br />
-            <img src={result.image} />
+            <div className="bg-blur" style={{backgroundImage: `url(${result.image})`}}></div>
+            <div className="card">
+              <div className="thumb">
+                <img src={result.image} />
+              </div>
+              <div className="meta">
+                {result.name}<br />
+                {result.brewery}<br />
+                {result.abv}, {result.ibu}<br />
+              </div>
+            </div>
+            <div className="rating">
+              {result.rating}
+            </div>
           </a>
         </li>
       );

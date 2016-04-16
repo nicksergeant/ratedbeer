@@ -47,9 +47,35 @@ ul {
       font-size: 24px;
       height: 315px;
       margin: 1.5%;
-      padding: 7px 9px;
+      overflow: hidden;
+      position: relative;
       text-decoration: none;
       width: 30%;
+
+      div.card {
+        height: 210px;
+        position: relative;
+        z-index: 9;
+      }
+      div.bg-blur {
+        -moz-filter: blur(40px);
+        -webkit-filter: blur(40px);
+        background-repeat: no-repeat;
+        background-size: cover;
+        filter: blur(40px);
+        height: 356px;
+        left: -35%;
+        position: absolute;
+        top: -115px;
+        width: 170%;
+        z-index: 8;
+      }
+      div.rating {
+        background: white;
+        height: 105px;
+        position: relative;
+        z-index: 9;
+      }
 
       @media (max-width: 900px) {
         box-shadow: none;
