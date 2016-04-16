@@ -8,6 +8,7 @@
     <meta name="author" content="" />
     <title>Rated Beer</title>
     <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+    <link rel="apple-touch-icon" href="<%= static_path(@conn, "/images/apple-touch-icon.png") %>">
   </head>
   <body>
     <%= @inner %>

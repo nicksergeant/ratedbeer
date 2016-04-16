@@ -61,7 +61,7 @@ ul {
         background: rgba(black, .25);
         content: '';
         display: block;
-        height: 200px;
+        height: 275px;
         left: 0;
         position: absolute;
         top: 0;
@@ -92,10 +92,12 @@ ul {
         div.thumb {
           float: left;
           margin-right: 5%;
+          text-align: center;
           width: 35%;
 
           img {
-            width: 100px;
+            max-width: 100px;
+            width: 100%;
           }
         }
         div.meta {
