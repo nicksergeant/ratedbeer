@@ -34,6 +34,10 @@ input {
   margin: 0 auto;
   padding: 15px 20px;
   width: 50%;
+
+  @media (max-width: 700px) {
+    width: 90%;
+  }
 }
 
 ul {
@@ -127,7 +131,9 @@ ul {
       div.rating {
         background: white;
         height: 85px;
+        padding-top: 20px;
         position: relative;
+        text-align: center;
         z-index: 9;
       }
 
