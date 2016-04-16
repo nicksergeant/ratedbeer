@@ -78,7 +78,7 @@ ul {
         background-repeat: no-repeat;
         background-size: cover;
         filter: blur(35px);
-        height: 275px;
+        height: 420px;
         left: -35%;
         position: absolute;
         top: -145px;
@@ -125,6 +125,12 @@ ul {
           }
           p.name, p.style {
             color: #FFD05A;
+          }
+          span.abv, span.ibu {
+            display: inline-block;
+          }
+          span.abv {
+            margin-right: 20px;
           }
         }
       }
