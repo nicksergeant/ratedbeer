@@ -31,6 +31,14 @@ class SearchForm extends Component {
     });
   }
 
+  clearSearch(event) {
+    event.stopPropagation();
+    this.setState({
+      query: ''
+    });
+    document.getElementsByTagName('input')[0].focus();
+  }
+
   handleQueryChange(event) {
     this.setState({ query: event.target.value || '' });
     clearTimeout(timer);
@@ -45,15 +53,21 @@ class SearchForm extends Component {
   }
 
   render() {
-    let loading;
+    let inputControl;
     if (this.state.searchCount !== this.state.resultsCount) {
-      loading = (
+      inputControl = (
         <div className="loading">
           <div className="spinner">
             <div className="bounce1"></div>
             <div className="bounce2"></div>
             <div className="bounce3"></div>
           </div>
+        </div>
+      );
+    } else if (this.state.query !== '') {
+      inputControl = (
+        <div className="loading">
+          <a className="clear-search" onClick={this.clearSearch.bind(this)}>×</a>
         </div>
       );
     }
@@ -67,7 +81,7 @@ class SearchForm extends Component {
             type="text"
             value={this.state.query}
           />
-          {loading}
+          {inputControl}
         </div>
       </header>
     );

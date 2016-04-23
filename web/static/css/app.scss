@@ -19,9 +19,10 @@ header {
   background: #FFD05A url('/images/header-bg.png') top left repeat;
   background-size: 158px 157px;
   padding: 50px 0 50px 0;
+  text-align: center;
   
   img {
-    display: block;
+    display: inline-block;
     margin: 0 auto 50px auto;
     width: 217px;
   }
@@ -50,6 +51,17 @@ div.search-container {
     top: 0;
     right: 10px;
     width: 70px;
+
+    a.clear-search {
+      color: #A9A9A9;
+      cursor: pointer;
+      display: inline-block;
+      font-size: 34px;
+      font-weight: bold;
+      margin-left: 43px;
+      margin-top: 7px;
+      text-transform: uppercase;
+    }
 
     // Mad props to http://tobiasahlin.com/spinkit/.
     .spinner {
