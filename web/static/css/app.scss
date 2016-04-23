@@ -58,9 +58,14 @@ div.search-container {
       display: inline-block;
       font-size: 34px;
       font-weight: bold;
-      margin-left: 43px;
-      margin-top: 7px;
+      margin-left: 25px;
+      margin-top: 0;
+      padding: 7px 18px 11px 18px;
       text-transform: uppercase;
+
+      &:hover {
+        color: #838383;
+      }
     }
 
     // Mad props to http://tobiasahlin.com/spinkit/.
