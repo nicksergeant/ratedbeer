@@ -15,9 +15,11 @@ class SearchForm extends Component {
     let qsQuery = window.location.search;
     if (qsQuery) {
       qsQuery = decodeURI(qsQuery.split('=')[1]);
-      this.handleQueryChange({
-        target: { value: qsQuery }
-      });
+      setTimeout(function() {
+        this.handleQueryChange({
+          target: { value: qsQuery }
+        });
+      }.bind(this), 500);
     }
 
     props.channel.on('phx_reply', res => {
