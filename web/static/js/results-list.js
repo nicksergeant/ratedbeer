@@ -19,6 +19,7 @@ class ResultsList extends Component {
 
   render() {
     const results = this.state.results.map((result) => {
+      const fillPercentage = ((parseFloat(result.rating) / 5) * 100) + '%';
       return (
         <li key={result.url}>
           <a href={result.url}>
@@ -39,7 +40,12 @@ class ResultsList extends Component {
               </div>
             </div>
             <div className="rating">
-              {result.rating}
+              <div className="stars-container">
+                <div className="backdrop"></div>
+                <div className="fill" style={{ width: fillPercentage }}></div>
+                <div className="stars"></div>
+              </div>
+              {result.rating === '0' ? 'No ratings' : result.rating}
             </div>
           </a>
         </li>
