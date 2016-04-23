@@ -7,7 +7,9 @@ class SearchForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      query: ''
+      query: '',
+      resultsCount: 0,
+      searchCount: 0
     };
 
     let qsQuery = window.location.search;
@@ -17,6 +19,14 @@ class SearchForm extends Component {
         target: { value: qsQuery }
       });
     }
+
+    props.channel.on('phx_reply', res => {
+      if (res.response.results) {
+        this.setState({
+          resultsCount: this.state.resultsCount + 1
+        });
+      }
+    });
   }
 
   handleQueryChange(event) {
@@ -26,19 +36,37 @@ class SearchForm extends Component {
       this.props.channel.push('search:query', {
         query: this.state.query
       });
+      this.setState({
+        searchCount: this.state.searchCount + 1
+      });
     }, 300);
   }
 
   render() {
+    let loading;
+    if (this.state.searchCount !== this.state.resultsCount) {
+      loading = (
+        <div className="loading">
+          <div className="spinner">
+            <div className="bounce1"></div>
+            <div className="bounce2"></div>
+            <div className="bounce3"></div>
+          </div>
+        </div>
+      );
+    }
     return (
       <header>
         <a href="/"><img src="/images/logo.png" /></a>
-        <input
-          onInput={this.handleQueryChange.bind(this)}
-          placeholder="Search..."
-          type="text"
-          value={this.state.query}
-        />
+        <div className="search-container">
+          <input
+            onInput={this.handleQueryChange.bind(this)}
+            placeholder="Search..."
+            type="text"
+            value={this.state.query}
+          />
+          {loading}
+        </div>
       </header>
     );
   }
